@@ -14,7 +14,7 @@ class TweetWall extends React.Component {
      this.state.tweets = this.props.newTweets;
   }
 
-  componentWillReceiveProps() {
+  componentWillReceiveProps(nextProps) {
     let tweets = this.state.tweets
     nextProps.newTweets.map(tweet => tweets.unshift(tweet))
     this.setState({tweets: tweets})
